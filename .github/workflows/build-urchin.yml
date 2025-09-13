@@ -1,0 +1,14 @@
+# Copyright 2025 Byron Clark
+# https://github.com/byronclark/miryoku_zmk
+
+name: 'Build urchin - byron'
+on: workflow_dispatch
+jobs:
+  built:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["urchin_left","urchin_right"]'
+      kconfig: '["CONFIG_ZMK_POINTING=y"]'
+      alphas: '["Colemak"]'
